@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivnath Pradhan | Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#fafaf8;
+  color:#1a1a1a;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 6%;
+  background:rgba(250,250,248,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #e8e4df;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-weight:700;font-size:1.25rem;color:#1a1a1a;
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  color:#666;text-decoration:none;font-size:0.875rem;
+  font-weight:500;letter-spacing:0.02em;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:#2d5be3}
+
+/* HERO */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;padding:7rem 6% 4rem;
+  max-width:1100px;margin:0 auto;
+}
+.hero-chip{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:#eef2ff;border:1px solid #c7d4fc;
+  border-radius:100px;padding:0.35rem 1rem;
+  font-size:0.78rem;color:#2d5be3;font-weight:600;
+  margin-bottom:1.8rem;width:fit-content;
+  letter-spacing:0.04em;text-transform:uppercase;
+}
+.dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,5.5rem);
+  font-weight:700;line-height:1.05;
+  letter-spacing:-0.02em;
+  color:#1a1a1a;margin-bottom:1.2rem;
+}
+h1 em{font-style:normal;color:#2d5be3}
+.hero-sub{
+  font-size:1.1rem;color:#555;
+  max-width:560px;margin-bottom:2.5rem;
+  font-weight:300;line-height:1.8;
+}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  padding:0.8rem 1.6rem;border-radius:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:0.9rem;font-weight:600;
+  text-decoration:none;cursor:pointer;
+  transition:all 0.2s;border:none;
+}
+.btn-blue{background:#2d5be3;color:#fff}
+.btn-blue:hover{background:#1e46c7}
+.btn-outline{background:#fff;color:#1a1a1a;border:1.5px solid #d4d0cb}
+.btn-outline:hover{border-color:#2d5be3;color:#2d5be3}
+
+.stats-row{
+  display:flex;gap:3rem;margin-top:3rem;
+  padding-top:2.5rem;border-top:1px solid #e8e4df;
+  flex-wrap:wrap;
+}
+.stat-n{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;color:#2d5be3;
+}
+.stat-l{font-size:0.8rem;color:#888;margin-top:0.1rem}
+
+/* WRAPPER */
+.wrap{max-width:1100px;margin:0 auto;padding:5rem 6%}
+
+/* SECTION HEADING */
+.sec-eyebrow{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;color:#2d5be3;
+  margin-bottom:0.6rem;
+}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,2.4rem);
+  font-weight:700;color:#1a1a1a;
+  margin-bottom:2.5rem;letter-spacing:-0.02em;
+}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.skill-card{
+  background:#fff;border:1px solid #e8e4df;
+  border-radius:12px;padding:1.4rem;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.skill-card:hover{border-color:#2d5be3;transform:translateY(-2px)}
+.skill-icon{font-size:1.5rem;margin-bottom:0.8rem}
+.skill-card h3{font-size:0.9rem;font-weight:600;color:#1a1a1a;margin-bottom:0.6rem}
+.tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+.tag{
+  background:#f0f4ff;border:1px solid #c7d4fc;
+  border-radius:5px;padding:0.18rem 0.55rem;
+  font-size:0.72rem;color:#2d5be3;font-weight:500;
+}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:1.2rem}
+.exp-card{
+  background:#fff;border:1px solid #e8e4df;
+  border-left:3px solid #2d5be3;
+  border-radius:12px;padding:1.8rem;
+}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+.exp-role{font-size:1rem;font-weight:700;color:#1a1a1a}
+.exp-co{font-size:0.85rem;color:#2d5be3;font-weight:500;margin-top:0.2rem}
+.exp-date{
+  background:#f0fdf4;border:1px solid #bbf7d0;
+  border-radius:6px;padding:0.2rem 0.7rem;
+  font-size:0.75rem;color:#16a34a;white-space:nowrap;
+}
+.exp-card ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+.exp-card li{
+  display:flex;gap:0.6rem;
+  font-size:0.875rem;color:#555;line-height:1.65;
+}
+.exp-card li::before{content:'▸';color:#2d5be3;flex-shrink:0;margin-top:0.05em}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.proj-card{
+  background:#fff;border:1px solid #e8e4df;
+  border-radius:14px;padding:1.8rem;
+  display:flex;flex-direction:column;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.proj-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+}
+.proj-card.p1::before{background:linear-gradient(90deg,#2d5be3,#60a5fa)}
+.proj-card.p2::before{background:linear-gradient(90deg,#7c3aed,#c084fc)}
+.proj-card.p3::before{background:linear-gradient(90deg,#0891b2,#22d3ee)}
+.proj-card:hover{border-color:#2d5be3;box-shadow:0 4px 20px rgba(45,91,227,0.1)}
+.proj-card h3{font-size:1rem;font-weight:700;color:#1a1a1a;margin-bottom:0.6rem}
+.proj-desc{font-size:0.85rem;color:#666;line-height:1.7;margin-bottom:1.1rem;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1.2rem}
+.ptag{
+  background:#f5f3ff;border:1px solid #ddd6fe;
+  border-radius:5px;padding:0.18rem 0.55rem;
+  font-size:0.72rem;color:#7c3aed;font-weight:500;
+}
+.proj-link{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:#f0f4ff;border:1px solid #c7d4fc;
+  border-radius:7px;padding:0.5rem 1rem;
+  color:#2d5be3;text-decoration:none;
+  font-size:0.82rem;font-weight:600;
+  transition:background 0.2s;width:fit-content;
+}
+.proj-link:hover{background:#2d5be3;color:#fff}
+
+/* EDUCATION */
+.edu-list{display:flex;flex-direction:column;gap:1rem}
+.edu-card{
+  background:#fff;border:1px solid #e8e4df;
+  border-radius:12px;padding:1.4rem 1.8rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:0.8rem;
+  transition:border-color 0.2s;
+}
+.edu-card:hover{border-color:#2d5be3}
+.edu-card h3{font-size:0.95rem;font-weight:700;color:#1a1a1a}
+.edu-card p{font-size:0.82rem;color:#888;margin-top:0.2rem}
+.edu-pill{
+  background:#eef2ff;border:1px solid #c7d4fc;
+  border-radius:8px;padding:0.35rem 1rem;
+  font-size:0.85rem;font-weight:700;color:#2d5be3;
+  white-space:nowrap;
+}
+
+/* CERTS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.cert-card{
+  background:#fff;border:1px solid #e8e4df;
+  border-radius:12px;padding:1.1rem 1.3rem;
+  display:flex;align-items:center;gap:0.9rem;
+  transition:border-color 0.2s;
+}
+.cert-card:hover{border-color:#2d5be3}
+.cert-ico{
+  width:36px;height:36px;border-radius:8px;
+  background:#eef2ff;display:flex;align-items:center;
+  justify-content:center;font-size:1rem;flex-shrink:0;
+}
+.cert-card p{font-size:0.82rem;font-weight:600;color:#1a1a1a;line-height:1.4}
+.cert-card small{font-size:0.75rem;color:#888}
+
+/* CONTACT */
+#contact{text-align:center}
+.contact-cards{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.contact-link{
+  display:flex;align-items:center;gap:0.6rem;
+  background:#fff;border:1.5px solid #e8e4df;
+  border-radius:10px;padding:0.8rem 1.4rem;
+  text-decoration:none;color:#1a1a1a;
+  font-size:0.875rem;font-weight:500;
+  transition:all 0.2s;
+}
+.contact-link:hover{border-color:#2d5be3;color:#2d5be3;background:#eef2ff}
+.contact-link svg{width:17px;height:17px;flex-shrink:0;stroke:currentColor}
+
+footer{
+  text-align:center;padding:2rem;
+  border-top:1px solid #e8e4df;
+  color:#aaa;font-size:0.8rem;
+}
+
+@media(max-width:640px){
+  nav{padding:1rem 4%}
+  .nav-links{gap:1.2rem}
+  #hero,.wrap{padding-left:4%;padding-right:4%}
+  .stats-row{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Shivnath Pradhan</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-chip"><span class="dot"></span>Open to Data Analyst Roles</div>
+  <h1>Data Analyst<br>&amp; <em>BI Developer</em></h1>
+  <p class="hero-sub">
+    IT Graduate from VSSUT Burla (CGPA 8.37). I build ETL pipelines,
+    interactive dashboards, and ML models that turn messy data into clear business decisions.
+  </p>
+  <div class="cta-row">
+    <a href="#projects" class="btn btn-blue">View My Projects ↓</a>
+    <a href="mailto:shivapradhan8102@gmail.com" class="btn btn-outline">Get In Touch</a>
+  </div>
+  <div class="stats-row">
+    <div><div class="stat-n">8.37</div><div class="stat-l">CGPA, VSSUT Burla</div></div>
+    <div><div class="stat-n">10K+</div><div class="stat-l">Data Points Processed</div></div>
+    <div><div class="stat-n">85%+</div><div class="stat-l">ML Model Accuracy</div></div>
+    <div><div class="stat-n">30%</div><div class="stat-l">Efficiency Gained</div></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="wrap">
+  <div class="sec-eyebrow">What I Know</div>
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <h3>Programming</h3>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">SQL</span>
+        <span class="tag">C / C++</span><span class="tag">JavaScript</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <h3>BI & Visualization</h3>
+      <div class="tags">
+        <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Excel</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <h3>Databases</h3>
+      <div class="tags">
+        <span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">Open SQL</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📦</div>
+      <h3>Python Libraries</h3>
+      <div class="tags">
+        <span class="tag">Pandas</span><span class="tag">NumPy</span>
+        <span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Scikit-learn</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <h3>Machine Learning</h3>
+      <div class="tags">
+        <span class="tag">Regression</span><span class="tag">Classification</span>
+        <span class="tag">NLP</span><span class="tag">TF-IDF</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">⚙️</div>
+      <h3>Data Engineering</h3>
+      <div class="tags">
+        <span class="tag">ETL Pipeline</span><span class="tag">EDA</span>
+        <span class="tag">Data Wrangling</span><span class="tag">Statistical Analysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="wrap" style="background:#f5f4f1;max-width:100%;padding-top:4rem;padding-bottom:4rem">
+<div style="max-width:1100px;margin:0 auto;padding:0 6%">
+  <div class="sec-eyebrow">Work History</div>
+  <h2>Experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Data Annotation Intern</div>
+          <div class="exp-co">Macgence · Remote</div>
+        </div>
+        <div class="exp-date">Sep 2025 – Mar 2026</div>
+      </div>
+      <ul>
+        <li>Annotated and labeled 10,000+ data points across text and image datasets, improving AI/ML model training quality.</li>
+        <li>Maintained 95%+ data accuracy and consistency, directly improving downstream model performance.</li>
+        <li>Collaborated with cross-functional AI teams to streamline annotation workflows, reducing processing time by 20%.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Data Science & Analytics Intern — Team Lead</div>
+          <div class="exp-co">CoderOne · Remote</div>
+        </div>
+        <div class="exp-date">Dec 2024 – Feb 2025</div>
+      </div>
+      <ul>
+        <li>Led a team of 4 to build NLP pipelines using Hugging Face BART/T5 for text summarization on 10K+ records.</li>
+        <li>Developed and evaluated ML classification models achieving 85%+ accuracy with detailed Pandas/Matplotlib analysis.</li>
+        <li>Automated end-to-end ML workflows, reducing manual processing time and improving efficiency by 30%.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="wrap">
+  <div class="sec-eyebrow">Featured Work</div>
+  <h2>Projects</h2>
+  <div class="proj-grid">
+
+    <div class="proj-card p1">
+      <h3>🏦 Bank Loan Lending Analysis</h3>
+      <p class="proj-desc">
+        Built a complete ETL pipeline extracting 38K+ loan records from CSV into MySQL.
+        Developed a 3-page Power BI dashboard with MTD/MoM KPIs, geographic maps, and dynamic slicers for real-time loan insights.
+      </p>
+      <div class="proj-tags">
+        <span class="ptag">MySQL</span><span class="ptag">Power BI</span>
+        <span class="ptag">SQL</span><span class="ptag">ETL</span>
+      </div>
+      <a href="https://github.com/shivnath-p/bank-loan-lending-analysis/tree/main" target="_blank" rel="noopener" class="proj-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        View on GitHub
+      </a>
+    </div>
+
+    <div class="proj-card p2">
+      <h3>👥 HR Analytics Dashboard</h3>
+      <p class="proj-desc">
+        Analyzed 1,470 employee records to uncover a 16.12% attrition rate and key drivers.
+        Built a 7-sheet Tableau dashboard with KPIs covering attrition patterns by department, education, age, and gender.
+      </p>
+      <div class="proj-tags">
+        <span class="ptag">Tableau</span><span class="ptag">Statistical Analysis</span>
+        <span class="ptag">Data Visualization</span>
+      </div>
+      <a href="https://github.com/shivnath-p/hr_dashboard" target="_blank" rel="noopener" class="proj-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        View on GitHub
+      </a>
+    </div>
+
+    <div class="proj-card p3">
+      <h3>🎬 IMDB Top 1000 Movies Analysis</h3>
+      <p class="proj-desc">
+        Conducted EDA on 1,000+ movies uncovering 20+ business insights. Applied Linear Regression + PCA achieving 88% accuracy predicting movie revenue. Built interactive Tableau and Excel dashboards.
+      </p>
+      <div class="proj-tags">
+        <span class="ptag">Python</span><span class="ptag">Pandas</span>
+        <span class="ptag">Tableau</span><span class="ptag">Scikit-learn</span>
+      </div>
+      <a href="https://github.com/shivnath-p/imdb-movies-analysis" target="_blank" rel="noopener" class="proj-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        View on GitHub
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="wrap" style="background:#f5f4f1;max-width:100%;padding-top:4rem;padding-bottom:4rem">
+<div style="max-width:1100px;margin:0 auto;padding:0 6%">
+  <div class="sec-eyebrow">Academic Background</div>
+  <h2>Education</h2>
+  <div class="edu-list">
+    <div class="edu-card">
+      <div>
+        <h3>B.Tech — Information Technology</h3>
+        <p>Veer Surendra Sai University of Technology, Burla &nbsp;·&nbsp; 2022 – May 2026</p>
+      </div>
+      <div class="edu-pill">CGPA 8.37</div>
+    </div>
+    <div class="edu-card">
+      <div>
+        <h3>Intermediate (Science)</h3>
+        <p>Marwari +2 High School, Chakradharpur &nbsp;·&nbsp; JAC Board · 2020–2022</p>
+      </div>
+      <div class="edu-pill">91%</div>
+    </div>
+    <div class="edu-card">
+      <div>
+        <h3>Matriculation</h3>
+        <p>S S +2 High School, Sonua &nbsp;·&nbsp; JAC Board · 2018–2020</p>
+      </div>
+      <div class="edu-pill">90.8%</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CERTS + ACHIEVEMENTS -->
+<section class="wrap">
+  <div class="sec-eyebrow">Credentials</div>
+  <h2>Certifications & Achievements</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-ico">🏅</div>
+      <div><p>SAP Certified Associate – Back-End Developer (ABAP Cloud)</p><small>SAP</small></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-ico">📱</div>
+      <div><p>Transactional Apps with ABAP RESTful Programming (RAP)</p><small>SAP</small></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-ico">🔬</div>
+      <div><p>Data Science Virtual Internship</p><small>Certificate</small></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-ico">📈</div>
+      <div><p>Applied Data Science for Data Analysts</p><small>Certificate</small></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-ico">🥈</div>
+      <div><p>2nd Place — "Solve for Tomorrow" Hackathon by Samsung</p><small>Innovision 2023</small></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-ico">🩸</div>
+      <div><p>Organised Blood Donation Camp — 150+ participants (NSS)</p><small>VSSUT Burla</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="wrap" style="background:#f5f4f1;max-width:100%;padding-top:4rem;padding-bottom:5rem;text-align:center">
+<div style="max-width:600px;margin:0 auto;padding:0 6%">
+  <div class="sec-eyebrow" style="justify-content:center">Say Hello</div>
+  <h2>Let's Connect</h2>
+  <p style="color:#666;font-size:1rem;margin-bottom:0.5rem">
+    Actively seeking Data Analyst opportunities. I'd love to hear from you!
+  </p>
+  <div class="contact-cards">
+    <a href="mailto:shivapradhan8102@gmail.com" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Gmail
+    </a>
+    <a href="tel:+918102056835" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +91 81020 56835
+    </a>
+    <a href="https://www.linkedin.com/in/shivnath-pradhan/" target="_blank" rel="noopener" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/shivnath-p" target="_blank" rel="noopener" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+      GitHub
+    </a>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>© 2026 Shivnath Pradhan · Built with HTML & CSS</p>
+</footer>
+
+</body>
+</html>
